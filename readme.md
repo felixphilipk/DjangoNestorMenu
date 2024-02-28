@@ -1,4 +1,4 @@
-# README for Django Dashboard Menu App
+# Django Dashboard Menu App
 
 ## Overview
 This Django Dashboard project includes a dynamic menu app that utilizes Tailwind CSS for styling. It's designed to manage nested menu items via a user-friendly admin interface and display them interactively in the menu page.
