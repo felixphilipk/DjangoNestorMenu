@@ -1,0 +1,42 @@
+{% load menu_tags %}
+{% load tailwindcss %}
+<!doctype html>
+<html lang="en">
+<head>
+{% load tailwindcss %}
+<meta charset="UTF-8">
+<meta name ="viewport" content="width=device-width,intial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>    
+<title>Menu</title>
+<style>
+   .menuItem ul {
+    display: none;
+}
+</style>
+</head>
+<body>
+<nav class="bg-gray-300 p-2 mt-0 fixed w-full z-10 top-0">    
+{% draw_menu 'main_menu' %}
+    </nav>
+   <script>
+    // JavaScript for handling clicks on menu items with children
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Listen for click events on elements with the class 'menu-item'
+        document.querySelectorAll('.menu-item').forEach((menuItem) => {
+            menuItem.addEventListener('click', function(event) {
+                // Prevent the default action
+                event.preventDefault();
+                // Toggle the display of the direct children 'ul' of the clicked 'li'
+                const childrenUl = menuItem.querySelector('ul');
+                if (childrenUl) {
+                    childrenUl.style.display = childrenUl.style.display === 'none' ? 'block' : 'none';
+                }
+                event.stopPropagation(); // Prevent bubbling
+            });
+        });
+    });
+</script> 
+    
+</body>
+</html>
+</DOCTYPE>
